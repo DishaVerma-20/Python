@@ -31,3 +31,32 @@ chai_variety = ["Lemon", "Ginger", "Mint"]
 print("".join(chai_variety)) # bina spaces ke saare elemnts ko join kar dega
 print(" ".join(chai_variety)) # spaces ke saath string ke elements ko print krega
 print(type(chai_variety))
+
+
+
+# printing raw strings, path etc
+name = "Disha\nVerma"
+print(name)
+print(r"name") # ye khud phirr ek raw strung ki trh treat kiya jayga
+
+# to print as it is
+name = r"Disha\nVerma"
+print(name)
+
+# raw string mai single backslash pr string nahi end hoga, usey vo lagega ki yeh escape char hai for inverted comma
+# ya toh slash he hata do ya frr double slash ka use karo
+
+path = r"c:\user\pwd\\"
+path = r"c:\user\pwd"
+print(path)
+
+# >>> chai = "c:\\user\\pwd"
+# >>> chai
+# 'c:\\user\\pwd'
+# >>> print(chai)
+# c:\user\pwd
+
+
+# Membership Operator
+chai = "Masala chai"
+print("Masala" in chai) # ask questions ki string ke andar hai ya nahi hai
