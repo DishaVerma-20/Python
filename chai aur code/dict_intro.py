@@ -52,3 +52,36 @@ print(chai_types.popitem())
 
 # for deleting the element from the memory reference
 del chai_types["Green"]
+
+print(chai_types) # 2 he bachega yaha par according to above
+
+# agar hum copy = chai_types kare toh same memory reference
+# but agar hum niche diye gaye method se kare toh dusri copy bana di jaati hai new reference par 
+chai_types_copy = chai_types.copy()
+
+
+# dictionary ke andar dictionary use karte haii, toh hame andar vali dict ka ref dena hoga kyuki vo index se nahi aa payga
+
+tea_shop = {
+    "chai": {"Ginger": "Zesty", "Mint": "Mild"},
+    "tea" : {"Masala": "Spicy", "Green":"Mild"}
+}
+print(tea_shop)
+print(tea_shop["chai"])
+print(tea_shop["chai"]["Ginger"])
+
+
+# dict mai loop use karna in one line 
+squared_num = {x:x**2 for x in range(7)}
+print(squared_num)
+
+# to remove squared no ke andar vala part
+# squared_num.clear() , toh hame mili ek empty dictionary
+
+keys = ["chai", "masala", "mint", "ginger"]
+default_value = "Delicious"
+new_dic = dict.fromkeys(keys, default_value)
+newdic1 = dict.fromkeys(keys, keys)
+
+print(new_dic)
+print(newdic1)
