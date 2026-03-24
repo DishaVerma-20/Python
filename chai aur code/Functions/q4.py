@@ -8,7 +8,10 @@ def circle(r):
     return area, circ
 print(circle(7))
 a, c = circle(7) # multiple assignment ya phir unpacking, vese tuple mai value return ho rhi thi
-print(a)
-print(c)
+print(round(a, 2))
+print(round(c, 2))
+
 
 # 👉 “Unpacking me ek iterable (tuple/list) ki values ko alag-alag variables me assign kar dete hain”
+
+# jese he return in python vahi function ka execution khtm
