@@ -1,8 +1,30 @@
+import json
+
+def load_data():
+    try:
+        with open ('youtube.txt') as file:
+            test = json.load(file)
+            print(type(test))
+            return test
+    except:
+        return []
+    
+def save_data_helper(videos):
+    with open ('youtube.txt', "w") as file:
+        json.dump(videos, file) # saara data write kar dete haii
+
 def list_all_videos(videos):
-    pass
+    # for index, video in enumerate(videos, start = 1):
+    # for vid in videos:
+    #     print(f"{videos}")
+    for index, video in enumerate(videos, start = 1):
+        print(f"{index}. {video['name']}, Duration: {video['time']}")
 
 def add_video(videos):
-    pass
+    name = input("Enter video name: ")
+    time = input("Enter video time ")
+    videos.append({"name": name, "time" : time})
+    save_data_helper(videos)
 
 def update_video(videos):
     pass
@@ -10,7 +32,7 @@ def update_video(videos):
 def delete_video(videos):
     pass
 
-videos = []
+videos = load_data() # file se data fetch, agar file mai nahi hai toh khali parenthesis 
 
 def main():
     while True:
@@ -21,6 +43,7 @@ def main():
         print("4. Delete a youtube video")
         print("5. Exit the app")
         choice = input("Enter your choice: ")
+        # print(videos)
 
         # multiple cases evaluate krke match krti haii
         match choice:
