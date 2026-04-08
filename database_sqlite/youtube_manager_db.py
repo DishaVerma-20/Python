@@ -11,10 +11,13 @@ cursor.execute('''
 ''')
 
 def list_videos():
-    pass
+    cursor.execute("SELECT * FROM videos")
+    for row in cursor.fetchall():
+        print(row)
 
 def add_video():
-    pass
+    cursor.execute("INSERT INTO VIDEOS (name, time) VALUES (?, ?)"(name, time))
+    cursor.committ()
 
 def update_video():
     pass
@@ -55,6 +58,7 @@ def main():
         else:
             print("Invalid choice")
 
+    con.close()
 
 if __name__ == "__main__":
     main()
