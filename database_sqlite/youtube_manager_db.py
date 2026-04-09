@@ -11,19 +11,22 @@ cursor.execute('''
 ''')
 
 def list_videos():
-    cursor.execute("SELECT * FROM videos")
+    cursor.execute("SELECT * FROM videos") # yha se tuple aayga toh isliye loop lgana hoga
     for row in cursor.fetchall():
         print(row)
 
-def add_video():
-    cursor.execute("INSERT INTO VIDEOS (name, time) VALUES (?, ?)"(name, time))
-    cursor.committ()
+def add_video(name, time):
+    cursor.execute("INSERT INTO VIDEOS (name, time) VALUES (?, ?)",(name, time)) 
+    # ye 2nd vala name time variable hai jo ques maek ko replace krege
+    con.commit()
 
-def update_video():
-    pass
+def update_video(video_id, name, time):
+    cursor.execute("UPDATE videos SET name = ?, time = ? WHERE id = ?", (name, time, video_id))
+    con.commit()
 
-def delete_video():
-    pass
+def delete_video(video_id):
+    cursor.execute("DELETE FROM videos WHERE id = ?", (video_id,)) # ek trailing comma sa he tuple mai jayga, aur tuple he accept hota haii
+    con.commit()
 
 def main():
     while True:
