@@ -23,7 +23,7 @@ val = array([1,3,6,9.4,12,'a'])
 for x in val:
     print(x, end = ' ')
 print(val.dtype) # unicode 32 is type
-
+# tells the type
 
 print('\n')
 # type specify krke
