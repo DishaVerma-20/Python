@@ -15,5 +15,7 @@ try:
     check_age()
 except Exception as e:
     print(f"Outside function error = {e}")
+    raise # toh yha aagey solve krne vala koi nahi 
+    # yha error dikh jaygii
 else:
     print("Success")
