@@ -8,7 +8,7 @@ def check_age(age:int):
 # check_age(1000)
 
 try:
-    check_age(abc)
+    check_age(-9) # abc mai seedha excption ke paas aa jayga
 except ValueError as e:
     print(e)
 except Exception as e:
