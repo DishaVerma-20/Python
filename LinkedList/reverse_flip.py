@@ -13,7 +13,7 @@ class Solution:
             temp.next = prev
             prev = temp
             temp = t1
-        return prev
+        return prev # reverse linked list ka head ho jayga
 
 head = ListNode(1)
 head.next = ListNode(3)
